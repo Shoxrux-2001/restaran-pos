@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "22097502419",
+    "project_id": "restoran-pos-f37ae",
+    "storage_bucket": "restoran-pos-f37ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22097502419:android:a50237f020c9d614f37426",
+        "android_client_info": {
+          "package_name": "com.example.restoran_pos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfy6o3xDriNUlj1brdeGivLu50UHpMFss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
