@@ -1,0 +1,36 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Flutter o'rnatish
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.0'
+          channel: 'stable'
+      
+      - name: Paketlarni yuklash
+        run: flutter pub get
+      
+      - name: Windows build
+        run: flutter build windows --release
+      
+      - name: Build fayllarni ZIP qilish
+        run: |
+          Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath restoran_pos_windows.zip
+      
+      - name: Artifacts yuklash
+        uses: actions/upload-artifact@v4
+        with:
+          name: restoran_pos_windows
+          path: restoran_pos_windows.zip
+          retention-days: 30
